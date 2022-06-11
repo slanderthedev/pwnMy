@@ -15,9 +15,7 @@ function slideEasterEgg() {
 async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
-		if (navigator.userAgent.includes("Mac OS X")) {
-			alert("MacOS is not supported");
-		} else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
 			socket.send("log_normal", "Starting exploitation for iOS 14.5");
 			await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
