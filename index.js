@@ -13,7 +13,7 @@ function slideEasterEgg() {
 }
 
 async function pwnMe() {
-	if (location.protocol != "https:") {
+	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (navigator.userAgent.includes("Mac OS X")) {
 			alert("MacOS is not supported");
@@ -27,8 +27,8 @@ async function pwnMe() {
 			socket.send("error", "Detected a unsupported version/device");
 		}
 	}else{
-        alert("exploitation only works over https");
-    }
+		socket.send("error", "ur mom gey");
+	}
 }
 
 const appHeight = () => {

