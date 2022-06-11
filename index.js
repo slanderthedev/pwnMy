@@ -219,6 +219,7 @@ function kickstart146() {
     .catch((err) => {
         socket.send("log_normal", "Error: " + err);
     });
+  alert("Pwned!");
 }
 
 
