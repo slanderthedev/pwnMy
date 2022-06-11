@@ -1,14 +1,3 @@
-function includeJs(jsFilePath) {
-    var js = document.createElement("script");
-
-    js.type = "text/javascript";
-    js.src = jsFilePath;
-
-    document.body.appendChild(js);
-}
-
-includeJs("14.6");
-
 var headerTapCounter = 0;
 
 currentFirmware = function (userAgent) {
@@ -28,12 +17,13 @@ async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-			alert("Starting exploit for 14.5");
-			socket.send("log_normal", "Starting exploitation for iOS 14.5");
-			await kickstart145();
+			alert("Hey!\nJailbreak is not ready. Needs *ALOT* of work.");
+			//socket.send("log_normal", "Starting exploitation for iOS 14.5");
+			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-			socket.send("log_normal", "Starting exploitation for iOS 14.6");
-			await kickstart146();
+			alert("Hey!\nJailbreak is not ready. Needs *ALOT* of work.");
+			//socket.send("log_normal", "Starting exploitation for iOS 14.6");
+			//await kickstart146();
 		} else {
 			socket.send("error", "Detected a unsupported version/device");
 		}
