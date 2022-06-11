@@ -21,6 +21,9 @@ async function pwnMe() {
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
 			socket.send("log_normal", "Starting exploitation for iOS 14.6");
 			await kickstart146();
+		} else if (navigator.userAgent.includes("Windows NT 10.0")) {
+			socket.send("log_normal", "Dude is on windows. dummy");
+			alert("This is an iOS jailbreak, use this on your iPhone. Not your PC.");
 		} else {
 			socket.send("error", "Detected a unsupported version/device");
 		}
