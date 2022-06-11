@@ -18,11 +18,11 @@ async function pwnMe() {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
 			alert("Hey!\nJailbreak is not ready. Needs *ALOT* of work.");
-			//socket.send("log_normal", "Starting exploitation for iOS 14.5");
+			socket.send("log_normal", "Hey!\nJailbreak is not ready. Needs *ALOT* of work.");
 			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
 			alert("Hey!\nJailbreak is not ready. Needs *ALOT* of work.");
-			//socket.send("log_normal", "Starting exploitation for iOS 14.6");
+			socket.send("log_normal", "Hey!\nJailbreak is not ready. Needs *ALOT* of work.");
 			//await kickstart146();
 		} else {
 			socket.send("error", "Detected a unsupported version/device");

