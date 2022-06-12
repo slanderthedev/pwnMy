@@ -170,7 +170,6 @@ function kickstart146() {
 
         // TODO: rest of exploit goes here
 
-        alert("obj @ " + addr.toString(16) + \n\n"double array header: " + doubleArrayCellHeader.toString(16));
       } catch(e) { // send exception strings to main thread (for debugging)
         port.postMessage("Exception!!");
         port.postMessage(e.toString());
@@ -203,6 +202,7 @@ function kickstart146() {
     wa.port.onmessage = (e) => { log(e.data); console.log(e.data) }
     await (new Promise((res) => setTimeout(res, 100)));
     wa.port.postMessage("pwn");
+    alert("obj @ " + addr.toString(16) + "\n\ndouble array header: " + doubleArrayCellHeader.toString(16));
   });
 }
 
