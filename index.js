@@ -1,4 +1,5 @@
 var headerTapCounter = 0;
+userAgentCheck();
 
 currentFirmware = function (userAgent) {
 	return userAgent.match(/\OS (.*?)\ like/)[1].replaceAll("_", ".");
