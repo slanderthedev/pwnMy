@@ -35,6 +35,16 @@ async function pwnMe() {
 	}
 }
 
+function userAgentCheck() {
+  if (!currentFirmware(navigator.userAgent).startsWith("14.6")) {
+    document.getElementById("jbButton").style.display = "none";
+  } else if (!currentFirmware(navigator.userAgent).startsWith("14.5")) {
+    document.getElementById("jbButton").style.display = "none";
+  } else {
+    document.getElementById("jbButton").style.display = "block";
+  }
+}
+
 var keep = [];
 function kickstart146() {
   alert("Exploit for 14.6 has started.");
