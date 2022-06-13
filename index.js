@@ -1,5 +1,4 @@
 var headerTapCounter = 0;
-userAgentCheck();
 
 currentFirmware = function (userAgent) {
 	return userAgent.match(/\OS (.*?)\ like/)[1].replaceAll("_", ".");
@@ -37,12 +36,12 @@ async function pwnMe() {
 }
 
 function userAgentCheck() {
-  if (!currentFirmware(navigator.userAgent).startsWith("14.6")) {
-    document.getElementById("jbButton").style.display = "none";
-  } else if (!currentFirmware(navigator.userAgent).startsWith("14.5")) {
-    document.getElementById("jbButton").style.display = "none";
-  } else {
+  if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
     document.getElementById("jbButton").style.display = "block";
+  } else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+    document.getElementById("jbButton").style.display = "block";
+  } else {
+    document.getElementById("jbButton").style.display = "none";
   }
 }
 
