@@ -19,19 +19,13 @@ async function pwnMe() {
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
       document.getElementById("jbButton").innerHTML = "jailbreaking...";
       alert("AudioWorklet exploit for iOS 14.5 has been executed!");
-			socket.send("log_normal", "Starting exploitation for iOS 14.5");
 			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
       document.getElementById("jbButton").innerHTML = "jailbreaking...";
       alert("AudioWorklet exploit for iOS 14.6 has been executed!");
-			socket.send("log_normal", "Starting exploitation for iOS 14.6");
 			//kickstart146();
-		} else if (navigator.userAgent.includes("Windows NT 10.0")) {
-			socket.send("log_normal", "Dude is on windows. dummy");
-			alert("This is an iOS jailbreak, use this on your iPhone. Not your PC.");
 		} else {
-			alert("Hey!\nLooks like you are on an unsupported version/device.");
-			socket.send("error", "Detected a unsupported version/device");
+			alert("Hey!\n\nLooks like you are on an unsupported version/device.");
 		}
 	}else{
 		socket.send("error", "ur mom gey");
