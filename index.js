@@ -22,7 +22,7 @@ async function pwnMe() {
 			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
       document.getElementById("jbButton").innerHTML = "jailbreaking...";
-      alert("AudioWorklet exploit for iOS 14.6 has been executed!");
+      //alert("AudioWorklet exploit for iOS 14.6 has been executed!");
 			//kickstart146();
 		} else {
 			alert("Hey!\n\nLooks like you are on an unsupported version/device.");
