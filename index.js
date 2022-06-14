@@ -1,14 +1,3 @@
-const startJb = (isSupported) => {
-	amount++;
-	if(amount <= 1) {
-		console.log("t");
-		document.getElementById("interact").innerHTML = `<div class='exploitButton'>${isSupported ? "Jailbreaking..." : "This Device is Unsupported"}</div>`;
-		if(isSupported) {
-			pwnMe();
-		}
-	}
-};
-
 var headerTapCounter = 0;
 
 currentFirmware = function (userAgent) {
@@ -28,11 +17,13 @@ async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-      alert("Hey!\n\nOnly the audioworklet exploit is implemented.\n\nThe kernel exploit is not yet implemented.");
+      document.getElementById("jbButton").innerHTML = "jailbreaking...";
+      alert("AudioWorklet exploit for iOS 14.5 has been executed!");
 			socket.send("log_normal", "Starting exploitation for iOS 14.5");
 			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-      alert("Hey!\n\nOnly the audioworklet exploit is implemented.\n\nThe kernel exploit is not yet implemented.");
+      document.getElementById("jbButton").innerHTML = "jailbreaking...";
+      alert("AudioWorklet exploit for iOS 14.6 has been executed!");
 			socket.send("log_normal", "Starting exploitation for iOS 14.6");
 			//kickstart146();
 		} else if (navigator.userAgent.includes("Windows NT 10.0")) {
