@@ -17,11 +17,11 @@ async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-      document.getElementById("jbButton").innerHTML = "jailbreaking...";
+      document.getElementById("jbButton").innerHTML = "Jailbreaking...";
       alert("AudioWorklet exploit for iOS 14.5 has been executed!");
 			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-      document.getElementById("jbButton").innerHTML = "jailbreaking...";
+      document.getElementById("jbButton").innerHTML = "Jailbreaking...";
       alert("AudioWorklet exploit for iOS 14.6 has been executed!");
 			kickstart146();
 		} else {
