@@ -24,24 +24,26 @@ function slideEasterEgg() {
 }
 
 async function pwnMe() {
-	//alert(location.protocol)
-	// if (location.protocol == "https:") {
-		//document.getElementById("jbButton").disabled = true;
-		if (navigator.userAgent.includes("Mac OS X") && !navigator.userAgent.includes("iPhone OS")) {
-			alert(`MacOS is not supported ${navigator.userAgent}`);
-		} else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-			alert("Starting exploitation for iOS 14.5")
-			return await kickstart145();
+	if (location.protocol = "https:") {
+		document.getElementById("jbButton").disabled = true;
+		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+			alert("Hey!\nAs of now, the jailbreak is not ready.\n\nTODO:\nGet exploit working correctly.\n\nAdd APT (Package Manager stuffs)");
+			socket.send("log_normal", "Starting exploitation for iOS 14.5");
+			await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-			alert("Starting exploitation for iOS 14.6")
+			alert("Hey!\nAs of now, the jailbreak is not ready.\n\nTODO:\nGet exploit working correctly.\n\nAdd APT (Package Manager stuffs)");
+			socket.send("log_normal", "Starting exploitation for iOS 14.6");
 			kickstart146();
+		} else if (navigator.userAgent.includes("Windows NT 10.0")) {
+			socket.send("log_normal", "Dude is on windows. dummy");
+			alert("This is an iOS jailbreak, use this on your iPhone. Not your PC.");
 		} else {
-			alert("ERROR: Your Device or Version is unsupported!")
-			return socket.send("Detected a unsupported version/device");
+			alert("Hey!\nLooks like you are on an unsupported version/device.");
+			socket.send("error", "Detected a unsupported version/device");
 		}
-	// }else{
-    //     alert("exploitation only works over https");
-    // }
+	}else{
+		socket.send("error", "ur mom gey");
+	}
 }
 
 function userAgentCheck() {
