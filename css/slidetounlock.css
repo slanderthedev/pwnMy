@@ -44,6 +44,15 @@ h2 {
   line-height: 1;
 }
 
+@keyframes slidetounlock {
+  0% {
+    background-position: -720px 0;
+  }
+  100% {
+    background-position: 720px 0;
+  }
+}
+
 @-webkit-keyframes slidetounlock {
   0% {
     background-position: -720px 0;
