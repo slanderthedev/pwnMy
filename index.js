@@ -27,11 +27,9 @@ async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-			alert("Hey!\nAs of now, the jailbreak is not ready.\n\nTODO:\nGet exploit working correctly.\n\nAdd APT (Package Manager stuffs)");
 			socket.send("log_normal", "Starting exploitation for iOS 14.5");
 			await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-			alert("Hey!\nAs of now, the jailbreak is not ready.\n\nTODO:\nGet exploit working correctly.\n\nAdd APT (Package Manager stuffs)");
 			socket.send("log_normal", "Starting exploitation for iOS 14.6");
 			kickstart146();
 		} else if (navigator.userAgent.includes("Windows NT 10.0")) {
@@ -46,19 +44,9 @@ async function pwnMe() {
 	}
 }
 
-function userAgentCheck() {
-  if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-    document.getElementById("jbButton").style.display = "block";
-  } else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-    document.getElementById("jbButton").style.display = "block";
-  } else {
-    document.getElementById("jbButton").style.display = "none";
-  }
-}
-
 var keep = [];
 function kickstart146() {
-  alert("Exploit for 14.6 has started.");
+  alert("Hey!\nThis only runs the audioworklet exploit. Other exploits (like the kernel exploit) are not yet implemented.");
   var context = new OfflineAudioContext(1, 128, 300000);
   context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
     // constant added to double JSValues
