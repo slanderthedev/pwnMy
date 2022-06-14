@@ -25,7 +25,7 @@ async function pwnMe() {
       alert("AudioWorklet exploit for iOS 14.6 has been executed!");
 			kickstart146();
 		} else {
-			alert("Hey!\n\nLooks like you are on an unsupported version/device.");
+			document.getElementById("jbButton").innerHTML = "Unsupported";
 		}
 	}else{
 		socket.send("error", "ur mom gey");
