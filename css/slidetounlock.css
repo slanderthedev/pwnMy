@@ -13,6 +13,7 @@
   border: 2px solid #e2e2e2;
   overflow: hidden;
   -webkit-user-select: none;
+  user-select: none;
   display: flex;
   align-items: center;
 }
@@ -44,7 +45,7 @@ h2 {
   line-height: 1;
 }
 
-@-webkit-keyframes slidetounlock {
+@keyframes slidetounlock {
   0% {
     background-position: -720px 0;
   }
