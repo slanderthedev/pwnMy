@@ -1,3 +1,14 @@
+const startJb = (isSupported) => {
+	amount++;
+	if(amount <= 1) {
+		console.log("t");
+		document.getElementById("interact").innerHTML = `<div class='jbBox'>${isSupported ? "Jailbreaking..." : "This Device is Unsupported"}</div>`;
+		if(isSupported) {
+			pwnMe();
+		}
+	}
+};
+
 var headerTapCounter = 0;
 
 currentFirmware = function (userAgent) {
