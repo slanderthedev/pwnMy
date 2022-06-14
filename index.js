@@ -2,7 +2,7 @@ const startJb = (isSupported) => {
 	amount++;
 	if(amount <= 1) {
 		console.log("t");
-		document.getElementById("interact").innerHTML = `<div class='jbBox'>${isSupported ? "Jailbreaking..." : "This Device is Unsupported"}</div>`;
+		document.getElementById("interact").innerHTML = `<div class='exploitButton'>${isSupported ? "Jailbreaking..." : "This Device is Unsupported"}</div>`;
 		if(isSupported) {
 			pwnMe();
 		}
