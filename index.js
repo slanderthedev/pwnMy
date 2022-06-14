@@ -27,11 +27,13 @@ async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+      alert("Hey!\n\nOnly the audioworklet exploit is implemented.\n\nThe kernel exploit is not yet implemented.");
 			socket.send("log_normal", "Starting exploitation for iOS 14.5");
-			await kickstart145();
+			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
+      alert("Hey!\n\nOnly the audioworklet exploit is implemented.\n\nThe kernel exploit is not yet implemented.");
 			socket.send("log_normal", "Starting exploitation for iOS 14.6");
-			kickstart146();
+			//kickstart146();
 		} else if (navigator.userAgent.includes("Windows NT 10.0")) {
 			socket.send("log_normal", "Dude is on windows. dummy");
 			alert("This is an iOS jailbreak, use this on your iPhone. Not your PC.");
@@ -46,7 +48,6 @@ async function pwnMe() {
 
 var keep = [];
 function kickstart146() {
-  alert("Hey!\nThis only runs the audioworklet exploit. Other exploits (like the kernel exploit) are not yet implemented.");
   var context = new OfflineAudioContext(1, 128, 300000);
   context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
     // constant added to double JSValues
