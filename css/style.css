@@ -8,7 +8,7 @@
 
 body {
     font-family: monospace;
-    background: linear-gradient(-45deg, #a7008b, #000000, #a7008b, #000000);
+    background: linear-gradient(-45deg, #610051, #000000, #610051, #000000);
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     color: #e5e5e5;       
